@@ -5,7 +5,7 @@
 		if (!empty($_POST['name'] && $_POST['password'])) {
 			$res = $app->getTable('User')->create(
 				["name"=>$_POST['name'], 
-				"password"=>sha1($_POST['lastName'])							
+				"password"=>sha1($_POST['password'])							
 				]);
 			if ($res) {
 				////message Flash

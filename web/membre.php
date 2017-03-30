@@ -19,20 +19,21 @@ $Mbr = new DBMembre($app->getDb());
 if ($_POST) {
 	if (isset($_POST['username'], $_POST['password'])) {
 		if ($Mbr->login($_POST['username'], $_POST['password'])) {
-			//prevoir un message flash
+var_dump($_SESSION);		//prevoir un message flash
 		}else{
 			header('location: index.php?p=login');
 			exit();
 		}
 	}
 }
-if (!$Mbr->logged()) {
+
+if (!$Mbr->connect()) {
 	$app->forbidden();
 }
 //////////////bouton connect 
 $app = App::getInstance();
 $Mbr = new DBMembre($app->getDb());
-if ($Mbr->logged()) {
+if ($Mbr->connect()) {
 	$connect = "Disconnect";
 	$panel = "";
 	$inscrit = "";

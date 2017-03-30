@@ -4,7 +4,7 @@ use Core\Database\Database;
 /**
 * classe pour la connexion au site via une base de donné
 */
-class DBMembre extends DBAuth
+class DBMembre 
 {
 
 	protected $db;
@@ -35,7 +35,7 @@ class DBMembre extends DBAuth
 	}
 
 
-	public function logged()
+	public function connect()
 	{
 		return isset($_SESSION['Mbr']);
 	}

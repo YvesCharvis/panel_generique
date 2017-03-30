@@ -3,11 +3,9 @@ use Core\Auth\DBAuth;
 $app2 = App::getInstance();
 $auth2 = new DBAuth($app2->getDb());
 
-if ($auth2->logged()) {
-	header('location: admin.php');
-
+if ($auth2->logged()){
+	header("location: admin.php");
 }
-
 ?>
 <h2>connexion</h2>
 

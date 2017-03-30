@@ -19,17 +19,15 @@ class NewTable extends Table
 	public function find($id)
 	{
 		return $this->query(" SELECT *
-									categories.titre as categories
-								FROM articles
+								FROM news
 								LEFT JOIN categories
-									ON category_id = categories.id
+									ON news.category_id = categories.id
 								WHERE news.id = ?
 							", [$id], true);
 	}
 	public function lastByCategory($category_id, $one=false)
 	{
 		return $this->query(" SELECT *
-									categories.titre as categories
 								FROM news
 								LEFT JOIN categories
 									ON category_id = categories.id

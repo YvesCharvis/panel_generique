@@ -13,6 +13,7 @@
 	<div class="col-md-2">
 		
 		<h2>Categorie</h2>
+		<?= require ROOT.'/pages/accueil/category.php'; ?>
 	</div>
 
 
