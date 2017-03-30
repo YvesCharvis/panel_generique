@@ -1,9 +1,9 @@
 <?php
 	$app = App::getInstance();
 	if ($_POST) {
-		if (!empty($_POST['first_name'] && $_POST['last_name'] && $_POST['first_day'] && $_POST['password'] && $_POST['adress_mail'] && $_POST['phone'])) {
+		if (!empty($_POST['name'] && $_POST['last_name'] && $_POST['first_day'] && $_POST['password'] && $_POST['adress_mail'] && $_POST['phone'])) {
 			$res = $app->getTable('Membre')->create(
-				["first_name"=>$_POST['first_name'], 
+				["name"=>$_POST['name'], 
 				"last_name"=>$_POST['last_name'],
 				"first_day"=>$_POST['first_day'],
 				"password"=>sha1($_POST['password']),
@@ -24,7 +24,7 @@
 
 <form method="post" >
 	<input type="hidden" name="id" value="">
-	<input class="form-control" type="text" name="first_name" value="" placeholder="Nom de famille">
+	<input class="form-control" type="text" name="name" value="" placeholder="Nom de famille">
 	<input class="form-control" type="text" name="last_name" value="" placeholder="Prénom">
 	<input class="form-control" type="Date" name="first_day" value="" placeholder="Date de naissance">
 	<input class="form-control" type="password" name="password" value="" placeholder="Votre Mots de Passe">
