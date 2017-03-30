@@ -38,6 +38,8 @@ if ($page==='home') {  // Charge centre page (contente)
 	require ROOT.'/pages/users/inscription.php';
 }elseif ($page==='success') {
 	require ROOT.'/pages/membres/index.php';
+}elseif ($page==='news.single') {
+	require ROOT.'/pages/accueil/newcontenu.php';
 
 
 }elseif ($page==='403') {

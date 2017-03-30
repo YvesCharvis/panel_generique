@@ -61,6 +61,8 @@ if ($page==='home') {
 	require ROOT.'/pages/admin/Administrateurs/index.php';
 }elseif ($page==='administrateurs.add') {
 	require ROOT.'/pages/admin/Administrateurs/add.php';
+}elseif ($page==='add.new') {
+	require ROOT.'/pages/admin/Contenu/News/add.php';
 	
 	/////suite pour post
 }else{
