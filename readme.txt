@@ -1,0 +1,1 @@
+<?= sha1('mdphash'); ?>  //HASH DE MOT DE PASSE
