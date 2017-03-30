@@ -4,7 +4,7 @@ use Core\Database\Database;
 /**
 * classe pour la connexion au site via une base de donné
 */
-class DBMembre
+class DBMembre extends DBAuth
 {
 
 	protected $db;
@@ -17,7 +17,7 @@ class DBMembre
 	{
 		$user = $this->db->prepare("SELECT * 
 									FROM membres 
-									WHERE adress_mail = ?",
+									WHERE name = ?",
 									[$username], null, true);
 
 
