@@ -27,7 +27,7 @@
 			<H2 class="login-titre">INSCRIPTION</H2>
 				<form method="post" class="form">
 					<input type="hidden" name="id" value="">
-					<input class="form-control" type="text" name="name" value="" placeholder="Nom de famille">
+					<input class="form-control" type="text" name="name" value="" placeholder="Pseudo">
 					<input class="form-control" type="text" name="last_name" value="" placeholder="Prénom">
 					<input class="form-control" type="Date" name="first_day" value="" placeholder="Date de naissance">
 					<input class="form-control" type="password" name="password" value="" placeholder="Votre Mots de Passe">
@@ -36,6 +36,14 @@
 					<hr>
 					<input id="breathing-button" class="btn btn-primary" type="submit" value="Inscription">
 				</form>
+		</div>
+	</div>
+	<div class="col-md-6">	
+		<div class="login-page">
+			<form method="post" class="form">
+				<p>COM FB CONNECT</p>
+			<img src="https://en.facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/thumb-drawn.svg" width="40%">
+			</form>
 		</div>
 	</div>
 	<div class="col-md-offset-1 col-md-4">

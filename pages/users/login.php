@@ -23,7 +23,7 @@ exit();
 <h2 class="login-titre">Connexion</h2>
   <div class="form">
     <form class="login-form" method="Post" action="admin.php">
-    <input class="form-control" type="text" name="username" placeholder="nom d'utilisateur">
+    <input class="form-control" type="text" name="username" placeholder="Pseudo">
 	<input class="form-control" type="password" name="password" placeholder="mot de passe">
 	<hr>
 	<input id="breathing-button" class="btn btn-primary" type="submit" value="Connexion">      
