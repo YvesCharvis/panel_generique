@@ -7,20 +7,33 @@
     <meta name="description" content="">
     <meta name="author" content="">   
     						<!-- Bootstrap core CSS -->
+                            
     	<link type="text/css" rel="stylesheet" href="frameworks/bootstrap.min.css">
-    	<link rel="stylesheet" type="text/css" href="css/style.css">
+    	<link rel="stylesheet" type="text/css" href="css/style.css">       
   </head>
 <body>	
 
-
-<ol class="breadcrumb">
-    <li><a href="index.php">Accueil</a></li>
-    <?= $inscrit ?>    
-    <?= $panel ?>
-    <?= $profilM ?>
-    <li><a href="index.php?p=<?=$connect ?>"><?= $connect ?></a></li> 
-</ol>
-
+<nav class="navbar navbar-fixed-top">
+    
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">Menu<i class="fa fa-bars"></i></button>
+                <img src="img/myproject.png" class="img-circle" width="47px">
+                <a class="navbar-brand" href="index.php">
+                      <span class="light">MY</span> PROJECT
+                </a>
+        </div>      
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">           
+                    <li><a href="index.php">Accueil</a></li>
+                    <?= $inscrit ?>    
+                    <?= $panel ?>
+                    <?= $profilM ?>
+                    <li><a href="index.php?p=<?=$connect ?>"><?= $connect ?></a></li>                    
+                </ul>
+            </div>       
+   
+</nav>
+,
 <!-- Appelle de pages/index.php => HOME -->
 			<?= $content; ?> 
 </body>

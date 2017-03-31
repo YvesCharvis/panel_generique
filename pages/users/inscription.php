@@ -12,28 +12,34 @@
 				]);
 			if ($res) {
 				////message Flash
-				header('location: membre.php?p=success');
+				header('location: index.php?p=Login');
 				?>
-				<div class="alert alert-success">Bien enregistré</div> 
+				<div class='alert alert-success'>Bien enregistré</div>"; 
 				<?php
 			}
 		}
 	}
 ?>
-<H2>INSCRIPTION</H2>
 
-<form method="post" >
-	<input type="hidden" name="id" value="">
-	<input class="form-control" type="text" name="name" value="" placeholder="Nom de famille">
-	<input class="form-control" type="text" name="last_name" value="" placeholder="Prénom">
-	<input class="form-control" type="Date" name="first_day" value="" placeholder="Date de naissance">
-	<input class="form-control" type="password" name="password" value="" placeholder="Votre Mots de Passe">
-	<input class="form-control" type="text" name="adress_mail" value="" placeholder="Votre Adresse mail">
-	<input class="form-control" type="value" name="phone" value="" placeholder="Numéro de Téléphone">
-<!-- 
-	<select>
-		<option name="service.id" value="<?= $post->id; ?>" ></option>
-	</select> -->
+<div class="row">
+	<div class="col-md-offset-0 col-md-4 ">
+		<div class="login-page">
+			<H2 class="login-titre">INSCRIPTION</H2>
+				<form method="post" class="form">
+					<input type="hidden" name="id" value="">
+					<input class="form-control" type="text" name="name" value="" placeholder="Nom de famille">
+					<input class="form-control" type="text" name="last_name" value="" placeholder="Prénom">
+					<input class="form-control" type="Date" name="first_day" value="" placeholder="Date de naissance">
+					<input class="form-control" type="password" name="password" value="" placeholder="Votre Mots de Passe">
+					<input class="form-control" type="text" name="adress_mail" value="" placeholder="Votre Adresse mail">
+					<input class="form-control" type="value" name="phone" value="" placeholder="Numéro de Téléphone">
+					<hr>
+					<input id="breathing-button" class="btn btn-primary" type="submit" value="Inscription">
+				</form>
+		</div>
+	</div>
+	<div class="col-md-offset-1 col-md-4">
+		<?php require ROOT.'/pages/users/login.php'; ?>
+	</div>
 
-	<input class="btn btn-primary" type="submit" name="">
-</form>
+</div>

@@ -16,15 +16,7 @@ class NewTable extends Table
 								ORDER BY news.date DESC
 							");
 	}
-	public function find($id)
-	{
-		return $this->query(" SELECT *
-								FROM news
-								LEFT JOIN categories
-									ON news.category_id = categories.id
-								WHERE news.id = ?
-							", [$id], true);
-	}
+
 	public function lastByCategory($category_id, $one=false)
 	{
 		return $this->query(" SELECT *

@@ -18,6 +18,13 @@ class MembreTable extends Table
 									membres.id									
 							   FROM membres");
 	}
+		public function find($id)
+	{
+		return $this->query(" SELECT *
+								FROM membres
+									
+							", [$id], true);
+	}
 
 
 }
