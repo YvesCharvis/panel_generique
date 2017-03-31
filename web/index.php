@@ -1,5 +1,6 @@
 <?php
 use Core\Auth\DBAuth;
+use Core\Auth\DBMembre;
 define('ROOT', dirname(__DIR__));
 require ROOT.'/app/App.php'; // permet l'absolute
 App::load();
@@ -13,17 +14,31 @@ if (isset($_GET['p'])) {
 //////////////bouton connect 
 $app = App::getInstance();
 $auth = new DBAuth($app->getDb());
+$mbr = new DBMembre($app->getDb());
+
 if ($auth->logged()) {
 	$connect = "Disconnect";
 	$panel = "<li><a href='admin.php?p=panel''>Panel Administrateur</a></li>";
 	$inscrit = "";
+	$profilM = "";
+}
+
+elseif ($mbr->connectM()) {
+			$connect = "Disconnect";
+			$panel = "";
+			$inscrit = "";
+			$profilM = "<li><a href='membre.php?p=profil''>Mon Profil</a></li>"	;
 	
-}else{
+	
+}
+else{
 	$connect = "Login";
 	$panel = "";
 	$inscrit = "<li><a href='index.php?p=Inscription''>Inscription</a></li>" ;
-
+	$profilM = "";
 }
+
+
 /////////////////////////
 
 ob_start();
@@ -36,8 +51,6 @@ if ($page==='home') {  // Charge centre page (contente)
 	require ROOT.'/pages/users/disconnect.php';
 }elseif ($page==='Inscription') {
 	require ROOT.'/pages/users/inscription.php';
-}elseif ($page==='success') {
-	require ROOT.'/pages/membres/index.php';
 }elseif ($page==='news.single') {
 	require ROOT.'/pages/accueil/newcontenu.php';
 

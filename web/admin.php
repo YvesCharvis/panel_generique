@@ -29,7 +29,7 @@ if ($_POST) {
 	}elseif ($_POST) {
 		if (isset($_POST['username'], $_POST['password'])) {
 			if ($mbr->loginM($_POST['username'], $_POST['password'])) {	
-			header('location: membre.php');
+			header('location: membre.php?p=home');
 			exit();
 			}
 		}
@@ -42,17 +42,17 @@ if ($_POST) {
 if (!$auth->logged()) {
 	$app->forbidden();
 }
-elseif ($mbr->connect()) {
-	$app->forbidden();
-}
+
 //////////////bouton connect 
 $app = App::getInstance();
 $auth = new DBAuth($app->getDb());
 if ($auth->logged()) {	
 	$panel = "<li><a href='admin.php?p=panel''>Panel Administrateur</a></li>";
     $inscrit = "";
+    $profilM = "";
 }else{
 	$connect = "login";
+	$profilM = "";
 	
 	
 }

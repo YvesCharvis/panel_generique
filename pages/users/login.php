@@ -7,13 +7,15 @@ $app2 = App::getInstance();
 $auth2 = new DBAuth($app2->getDb());
 $mbr = new DBMembre($app2->getDb());
 
-if ($mbr->connect()){
+if ($mbr->connectM()){
 	header("location: membre.php");
 }
 if ($auth2->logged()){
 	header("location: admin.php");
-	# code...
+exit();
 }
+
+
 ?>
 <h2>connexion</h2>
 

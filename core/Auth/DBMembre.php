@@ -35,14 +35,14 @@ class DBMembre
 	}
 
 
-	public function connect()
+	public function connectM()
 	{
 		return isset($_SESSION['Mbr']);
 	}
 
 	public function getUserId()
 	{
-		if ($this->connect()) {
+		if ($this->connectM()) {
 			return $_SESSION['Mbr'];
 		}else{
 			return false;

@@ -16,8 +16,9 @@
 <ol class="breadcrumb">
     <li><a href="index.php">Accueil</a></li>
     <?= $inscrit ?>    
-    <li><a href="index.php?p=<?=$connect ?>"><?= $connect ?></a></li> 
     <?= $panel ?>
+    <?= $profilM ?>
+    <li><a href="index.php?p=<?=$connect ?>"><?= $connect ?></a></li> 
 </ol>
 
 <!-- Appelle de pages/index.php => HOME -->
