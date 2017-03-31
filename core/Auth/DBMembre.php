@@ -7,13 +7,13 @@ use Core\Database\Database;
 class DBMembre 
 {
 
-	protected $db;
+
 	function __construct(Database $db)
 	{
 		$this->db = $db;
 	}
 
-	public function login($username, $password)
+	public function loginM($username, $password)
 	{
 		$user = $this->db->prepare("SELECT * 
 									FROM membres 
@@ -42,7 +42,7 @@ class DBMembre
 
 	public function getUserId()
 	{
-		if ($this->logged()) {
+		if ($this->connect()) {
 			return $_SESSION['Mbr'];
 		}else{
 			return false;

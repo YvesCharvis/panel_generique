@@ -1,10 +1,18 @@
 <?php
 use Core\Auth\DBAuth;
+use Core\Auth\DBMembre;
+
+
 $app2 = App::getInstance();
 $auth2 = new DBAuth($app2->getDb());
+$mbr = new DBMembre($app2->getDb());
 
+if ($mbr->connect()){
+	header("location: membre.php");
+}
 if ($auth2->logged()){
 	header("location: admin.php");
+	# code...
 }
 ?>
 <h2>connexion</h2>

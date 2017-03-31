@@ -1,5 +1,6 @@
 <?php
 use Core\Auth\DBAuth;
+use Core\Auth\DBMembre;
 
 
 define('ROOT', dirname(__DIR__));
@@ -14,24 +15,34 @@ if (isset($_GET['p'])) {
 
 $app = App::getInstance();
 $auth = new DBAuth($app->getDb());
+$mbr = new DBMembre($app->getDb());
 
 
 //connexion utilisateur via login.php
 if ($_POST) {
 	if (isset($_POST['username'], $_POST['password'])) {
-		if ($auth->login($_POST['username'], $_POST['password'])) {
+		if ($auth->loginA($_POST['username'], $_POST['password'])) {
+			header('location: admin.php?p=panel');
 			//prevoir un message flash			
+
 		
-	}else{
-			header('location: index.php?p=login');
+	}elseif ($_POST) {
+		if (isset($_POST['username'], $_POST['password'])) {
+			if ($mbr->loginM($_POST['username'], $_POST['password'])) {	
+			header('location: membre.php');
 			exit();
 			}
 		}
+		}
+}
 }
 
 //fin connexion utilisateur via login.php
 
 if (!$auth->logged()) {
+	$app->forbidden();
+}
+elseif ($mbr->connect()) {
 	$app->forbidden();
 }
 //////////////bouton connect 

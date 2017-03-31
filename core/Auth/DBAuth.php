@@ -15,7 +15,7 @@ class DBAuth
 
 	 
 
-	public function login($username, $password)
+	public function loginA($username, $password)
 	{
 		$user = $this->db->prepare("SELECT * 
 									FROM users 

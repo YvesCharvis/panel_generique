@@ -12,14 +12,14 @@ if (isset($_GET['p'])) {
 
 
 $app = App::getInstance();
-$Mbr = new DBMembre($app->getDb());
+$mbr = new DBMembre($app->getDb());
 
 
 
 if ($_POST) {
 	if (isset($_POST['username'], $_POST['password'])) {
-		if ($Mbr->login($_POST['username'], $_POST['password'])) {
-var_dump($_SESSION);		//prevoir un message flash
+		if ($mbr->loginM($_POST['username'], $_POST['password'])) {
+	//prevoir un message flash
 		}else{
 			header('location: index.php?p=login');
 			exit();
@@ -27,13 +27,13 @@ var_dump($_SESSION);		//prevoir un message flash
 	}
 }
 
-if (!$Mbr->connect()) {
+if (!$mbr->connect()) {
 	$app->forbidden();
 }
 //////////////bouton connect 
 $app = App::getInstance();
-$Mbr = new DBMembre($app->getDb());
-if ($Mbr->connect()) {
+$mbr = new DBMembre($app->getDb());
+if ($mbr->connect()) {
 	$connect = "Disconnect";
 	$panel = "";
 	$inscrit = "";
