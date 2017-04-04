@@ -42,7 +42,7 @@ if ($mbr->connectM()) {
 	$connect = "Disconnect";
 	$panel = "";
 	$inscrit = "";
-	$profilM = "<li><a href='membre.php?p=profil'>Mon Profil</a></li>'";
+	$profilM = "<li><a href='membre.php?p=profil ?>' >Mon Profil</a></li>'";
 	
 }else{
 	$connect = "Login";

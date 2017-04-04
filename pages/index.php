@@ -1,6 +1,6 @@
 <h2>MON SITE</h2>
 
-
+<?= var_dump($_SESSION); ?>
 <div class="row">
 <div class="col-xs-10 col-md-8 col-lg-6">
 <h2>News du moments</h2>

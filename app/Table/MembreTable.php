@@ -20,10 +20,15 @@ class MembreTable extends Table
 	}
 		public function find($id)
 	{
-		return $this->query(" SELECT *
+		return $this->query(" SELECT 
+									membres.name,
+									membres.last_name,
+									membres.first_day,
+									membres.adress_mail,
+									membres.phone,
+									membres.id	
 								FROM membres
-								WHERE membres.id = ?	
-							", [$id], true);
+								WHERE membres.id = ?" ,[$id], true);
 	}
 
 

@@ -26,8 +26,11 @@
                 <ul class="nav navbar-nav">           
                     <li><a href="index.php">Accueil</a></li>
                     <?= $inscrit ?>    
-                    <?= $panel ?>                  
-                    <?= $profilM ?>                
+                    <?= $panel ?>   
+
+
+                    <?= $profilM   ?>
+
                     <li><a href="index.php?p=<?=$connect ?>"><?= $connect ?></a></li>                    
                 </ul>
             </div>       
