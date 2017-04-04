@@ -36,11 +36,13 @@ if (!$mbr->connectM()) {
 //////////////bouton connect 
 $app = App::getInstance();
 $mbr = new DBMembre($app->getDb());
+
+
 if ($mbr->connectM()) {
 	$connect = "Disconnect";
 	$panel = "";
 	$inscrit = "";
-	$profilM = "<li><a href='membre.php?p=profil''>Mon Profil</a></li>"	;
+	$profilM = "<li><a href='membre.php?p=profil'>Mon Profil</a></li>'";
 	
 }else{
 	$connect = "Login";
@@ -60,7 +62,9 @@ if ($page==='home') {  // Charge centre page (contente)
 	require ROOT.'/pages/membres/index.php';
 
 }elseif ($page==='success') {
-	require ROOT.'/pages/membres/sub.php';	
+	require ROOT.'/pages/membres/sub.php';
+}elseif ($page==='traitement') {
+	require ROOT.'/pages/membres/traitement.php';		
 }elseif ($page==='profil') {
 	require ROOT.'/pages/membres/profil.php';
 

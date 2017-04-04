@@ -9,7 +9,7 @@ class MembreTable extends Table
 	
 	public function last()
 	{
-		return $this->query("SELECT membres.first_name,
+		return $this->query("SELECT membres.name,
 									membres.last_name,
 									membres.first_day,
 									membres.adress_mail,
@@ -22,7 +22,7 @@ class MembreTable extends Table
 	{
 		return $this->query(" SELECT *
 								FROM membres
-									
+								WHERE membres.id = ?	
 							", [$id], true);
 	}
 
